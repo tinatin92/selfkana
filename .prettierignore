@@ -1,0 +1,2 @@
+# Ignore Supabase types file
+src/supabase/supabase.types.ts

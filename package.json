@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "prettier": "prettier . --write",
+    "ts-check": "tsc -b",
     "preview": "vite preview",
     "prepare": "husky",
     "supabase-types": "npx supabase gen types typescript --project-id uekclpgahxazjutdlngm --schema public > src/supabase/supabase.types.ts"

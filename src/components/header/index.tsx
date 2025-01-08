@@ -34,7 +34,6 @@ const Header: React.FC = () => {
               <NavLink className="text-white text-xl" to="lessons">
                 Lessons
               </NavLink>
-
               {!user ? (
                 <Button>
                   <NavLink to="/login">Login</NavLink>
@@ -45,7 +44,8 @@ const Header: React.FC = () => {
                   <NavLink to="/profile">Profile</NavLink>
                 </div>
               )}
-c            </nav>
+              c{" "}
+            </nav>
           </div>
         </div>
       </Container>
