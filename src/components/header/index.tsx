@@ -44,7 +44,7 @@ const Header: React.FC = () => {
                   <NavLink to="/profile">Profile</NavLink>
                 </div>
               )}
-              c{" "}
+              {" "}
             </nav>
           </div>
         </div>

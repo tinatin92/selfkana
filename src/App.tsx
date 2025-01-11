@@ -8,23 +8,27 @@ import { useAtom } from "jotai";
 import { userAtom } from "./store/auth";
 import { useEffect } from "react";
 import { supabase } from "./supabase";
+import ProfilePage from "./pages/profile/view/profile-view";
+import Story from "./pages/stories";
 
 function App() {
-  const [, setUser] = useAtom(userAtom);
-
+  const [, setUser] = useAtom(userAtom)
+ 
+  
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session);
-    });
+      console.log("sessionddd" , session)
+      setUser(session)
+    })
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session);
-    });
+      setUser(session)
+    })
 
-    return () => subscription.unsubscribe();
-  }, [setUser]);
+    return () => subscription.unsubscribe()
+  }, [setUser])
 
   return (
     <Routes>
@@ -33,8 +37,10 @@ function App() {
         <Route path="lessons" element={<LessonsPage />} />
         <Route path="signup" element={<SignUpPage />} />
         <Route path="login" element={<LoginFormPage />} />
+        <Route path="profile" element={<ProfilePage />} />
+        <Route path="storie" element={<Story />} />
       </Route>
-    </Routes>
+    </Routes> 
   );
 }
 

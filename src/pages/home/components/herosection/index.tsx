@@ -1,10 +1,24 @@
 import { Button } from "@/components/ui/button";
 import Container from "@/components/ui/container";
+import audio from '@/assets/a.mp3'
+import { useRef } from "react";
+
 
 const Hero = () => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const handleClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch((error) => {
+        console.error("Error playing audio:", error);
+      });
+    }
+  };
+
   return (
     <Container>
       <div className="flex ">
+       
         <div
           className=" border-[12px] p-6 border-white w-full
        rounded-3xl bg-customGray bg-math-grid bg-60px
@@ -36,10 +50,16 @@ const Hero = () => {
           >
             日本語
           </div>
+          <audio ref={audioRef}  className="hidden" controls>
+            <source src={audio} type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio>
           <div
-            className="w-[80px] h-[80px] rounded-full bg-customGray
+          
+            className="w-[80px] h-[80px] rounded-full bg-customGray cursor-pointer
            text-white text-2xl flex items-center
             justify-center absolute bottom-7 right-7 xl:w-[100px] xl:h-[100px] xl:text-4xl xl:right-12"
+            onClick={handleClick}
           >
             あ
           </div>

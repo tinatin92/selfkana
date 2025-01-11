@@ -28,7 +28,7 @@ export default {
 			`,
       },
       colors: {
-        background: "#F5E8DA" /* 'hsl(var(--background))' */,
+        background: /* "#F5E8DA" */ 'hsl(var(--background))',
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
@@ -70,6 +70,7 @@ export default {
         },
         customGray: "#494949",
         customRed: "#E85D56",
+        customBage: "#F5E8DA"
       },
     },
   },
