@@ -81,7 +81,7 @@ const LettetSlider: React.FC = () => {
   if (error) {
     return <div>Sorry, Data can't be fetched!</div>;
   }
-console.log(lettersData)
+  console.log(lettersData);
   return (
     <div className="w-1/2  flex items-center justify-center px-12">
       <Carousel className="w-full">
@@ -102,7 +102,10 @@ console.log(lettersData)
                   <div className="flex  flex-col w-1/2 gap-3">
                     <div className="h-[150px] rounded-xl flex items-center justify-center">
                       <audio ref={audioRef} className="hidden" controls>
-                        <source src={letter.audio ?? undefined} type="audio/mp3" />
+                        <source
+                          src={letter.audio ?? undefined}
+                          type="audio/mp3"
+                        />
                         Your browser does not support the audio element.
                       </audio>
                       <Button

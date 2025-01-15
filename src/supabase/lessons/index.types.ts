@@ -3,7 +3,7 @@ export type LettersData = {
   created_at: string;
   description: string | null;
   id: number;
-  "letter_georgian": string | null;
+  letter_georgian: string | null;
   "letter-hiragana": string | null;
-  "letter_katakana": string | null;
+  letter_katakana: string | null;
 };

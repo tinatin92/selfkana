@@ -43,8 +43,7 @@ const Header: React.FC = () => {
                   <Button onClick={() => handleLogoutMutation()}>Logout</Button>
                   <NavLink to="/profile">Profile</NavLink>
                 </div>
-              )}
-              {" "}
+              )}{" "}
             </nav>
           </div>
         </div>

@@ -12,23 +12,22 @@ import ProfilePage from "./pages/profile/view/profile-view";
 import Story from "./pages/stories";
 
 function App() {
-  const [, setUser] = useAtom(userAtom)
- 
-  
+  const [, setUser] = useAtom(userAtom);
+
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      console.log("sessionddd" , session)
-      setUser(session)
-    })
+      console.log("sessionddd", session);
+      setUser(session);
+    });
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session)
-    })
+      setUser(session);
+    });
 
-    return () => subscription.unsubscribe()
-  }, [setUser])
+    return () => subscription.unsubscribe();
+  }, [setUser]);
 
   return (
     <Routes>
@@ -40,7 +39,7 @@ function App() {
         <Route path="profile" element={<ProfilePage />} />
         <Route path="storie" element={<Story />} />
       </Route>
-    </Routes> 
+    </Routes>
   );
 }
 

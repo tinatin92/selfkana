@@ -72,15 +72,9 @@ export function ProfileForm() {
     console.log(value);
   };
 
-
-  
-
   return (
     <Container>
-      <div>
-        {profileData && <div>{profileData.username} </div>}
-
-      </div>
+      <div>{profileData && <div>{profileData.username} </div>}</div>
 
       <div className="w-full h-full flex items-center justify-center ">
         <div className="w-[600px] p-12 bg-white rounded-3xl">
