@@ -39,7 +39,6 @@ function App() {
         <Route path="login" element={<LoginFormPage />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="create-storie" element={<CreateStoriesPage />} />
-     
       </Route>
     </Routes>
   );

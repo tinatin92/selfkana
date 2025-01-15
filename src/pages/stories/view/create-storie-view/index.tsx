@@ -1,11 +1,7 @@
-import CreateStorie from "../../components/create-storie-form"
-
-
+import CreateStorie from "../../components/create-storie-form";
 
 const CreateStoriesPage = () => {
-  return (
-   <CreateStorie />
-  )
-}
+  return <CreateStorie />;
+};
 
-export default CreateStoriesPage
+export default CreateStoriesPage;

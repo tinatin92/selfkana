@@ -2,13 +2,12 @@ import { Button } from "@/components/ui/button";
 import Container from "@/components/ui/container";
 import audio from "@/assets/a.mp3";
 import { useRef } from "react";
-import { Trans, useTranslation } from "react-i18next"
-
+import { Trans, useTranslation } from "react-i18next";
 
 const Hero = () => {
-  const {t} = useTranslation()
-  console.log(t("Welcome to React"))
-  
+  const { t } = useTranslation();
+  console.log(t("Welcome to React"));
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleClick = () => {
@@ -28,9 +27,11 @@ const Hero = () => {
          lg:w-[650px] xl:w-2/3 lg:p-12
         "
         >
-          <div className="text-white text-4xl font-semibold xl:text-5xl">კეთილი იყოს შენი მობრძანება</div>
+          <div className="text-white text-4xl font-semibold xl:text-5xl">
+            კეთილი იყოს შენი მობრძანება
+          </div>
           <div className="text-white text-2xl mt-6">
-            ჩვენთან აღმოაჩენ იაპონურ ლიტერატურას, 
+            ჩვენთან აღმოაჩენ იაპონურ ლიტერატურას,
           </div>
           <div>
             {/* {t("home-page.Welcome")} */}

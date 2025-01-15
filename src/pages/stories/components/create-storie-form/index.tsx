@@ -95,7 +95,11 @@ const CreateStorie = () => {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Textarea className="min-h-48" placeholder="Description" {...field} />
+                    <Textarea
+                      className="min-h-48"
+                      placeholder="Description"
+                      {...field}
+                    />
                   </FormControl>
 
                   <FormMessage />

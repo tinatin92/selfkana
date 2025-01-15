@@ -77,7 +77,7 @@ export function ProfileForm() {
     <Container>
       <div>{profileData && <div>{profileData.username} </div>}</div>
       <Link to="/create-storie">
-        <Button>Create Storie</Button>  
+        <Button>Create Storie</Button>
       </Link>
 
       <div className="w-full h-full flex items-center justify-center ">
@@ -95,7 +95,9 @@ export function ProfileForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="dark:text-customGray">Username</FormLabel>
+                    <FormLabel className="dark:text-customGray">
+                      Username
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder="Username" {...field} />
                     </FormControl>
@@ -110,7 +112,9 @@ export function ProfileForm() {
                 name="full_name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="dark:text-customGray">Full Name</FormLabel>
+                    <FormLabel className="dark:text-customGray">
+                      Full Name
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder="Full name" {...field} />
                     </FormControl>
@@ -125,7 +129,9 @@ export function ProfileForm() {
                 name="avatar_url"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="dark:text-customGray">avarat</FormLabel>
+                    <FormLabel className="dark:text-customGray">
+                      avarat
+                    </FormLabel>
                     <FormControl>
                       <Input placeholder="Full name" {...field} />
                     </FormControl>
