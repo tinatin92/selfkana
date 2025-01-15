@@ -2,8 +2,13 @@ import { Button } from "@/components/ui/button";
 import Container from "@/components/ui/container";
 import audio from "@/assets/a.mp3";
 import { useRef } from "react";
+import { Trans, useTranslation } from "react-i18next"
+
 
 const Hero = () => {
+  const {t} = useTranslation()
+  console.log(t("Welcome to React"))
+  
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const handleClick = () => {
@@ -20,10 +25,17 @@ const Hero = () => {
         <div
           className=" border-[12px] p-6 border-white w-full
        rounded-3xl bg-customGray bg-math-grid bg-60px
-        text-white text-4xl font-semibold lg:w-[650px] xl:w-2/3 lg:p-12
-        xl:text-5xl"
+         lg:w-[650px] xl:w-2/3 lg:p-12
+        "
         >
-          <span>კეთილი იყოს შენი მობრძანება იქ სადაც ისწავლი</span>
+          <div className="text-white text-4xl font-semibold xl:text-5xl">კეთილი იყოს შენი მობრძანება</div>
+          <div className="text-white text-2xl mt-6">
+            ჩვენთან აღმოაჩენ იაპონურ ლიტერატურას, 
+          </div>
+          <div>
+            {/* {t("home-page.Welcome")} */}
+            <Trans>home-page.Welcome</Trans>
+          </div>
           <div
             className=" flex justify-end relative z-0 text-5xl lg:text-7xl text-customRed mt-16 xl:mt-20 text-center 
         "
@@ -34,7 +46,7 @@ const Hero = () => {
            after:-translate-x-1/2 after:-translate-y-1/2 after:z-[-1]
            lg:after:w-[220px] lg:after:h-[220px] "
             >
-              იაპონურს
+              Selfカな
             </span>
           </div>
           <Button className="mt-20">Sign Up</Button>

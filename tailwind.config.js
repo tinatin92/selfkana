@@ -23,9 +23,9 @@ export default {
       },
       backgroundImage: {
         "math-grid": `
-			  linear-gradient(90deg, white 1px, transparent 1px),
-			  linear-gradient(white 1px, transparent 1px)
-			`,
+          linear-gradient(90deg, rgba(255, 255, 255, .2) 1px, transparent 1px),
+          linear-gradient(rgba(255, 255, 255, .2) 1px, transparent 1px)
+        `,
       },
       colors: {
         background: /* "#F5E8DA" */ "hsl(var(--background))",

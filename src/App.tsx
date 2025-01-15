@@ -9,7 +9,8 @@ import { userAtom } from "./store/auth";
 import { useEffect } from "react";
 import { supabase } from "./supabase";
 import ProfilePage from "./pages/profile/view/profile-view";
-import Story from "./pages/stories";
+
+import CreateStoriesPage from "./pages/stories/view/create-storie-view";
 
 function App() {
   const [, setUser] = useAtom(userAtom);
@@ -37,7 +38,8 @@ function App() {
         <Route path="signup" element={<SignUpPage />} />
         <Route path="login" element={<LoginFormPage />} />
         <Route path="profile" element={<ProfilePage />} />
-        <Route path="storie" element={<Story />} />
+        <Route path="create-storie" element={<CreateStoriesPage />} />
+     
       </Route>
     </Routes>
   );

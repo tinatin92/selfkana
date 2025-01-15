@@ -22,6 +22,7 @@ import { fillProfileInfo, getProfileInfo } from "@/supabase/account";
 
 import { userAtom } from "@/store/auth";
 import { useAtomValue } from "jotai";
+import { Link } from "react-router-dom";
 
 type ProfileTypes = {
   id?: string;
@@ -75,6 +76,9 @@ export function ProfileForm() {
   return (
     <Container>
       <div>{profileData && <div>{profileData.username} </div>}</div>
+      <Link to="/create-storie">
+        <Button>Create Storie</Button>  
+      </Link>
 
       <div className="w-full h-full flex items-center justify-center ">
         <div className="w-[600px] p-12 bg-white rounded-3xl">
@@ -91,7 +95,7 @@ export function ProfileForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Username</FormLabel>
+                    <FormLabel className="dark:text-customGray">Username</FormLabel>
                     <FormControl>
                       <Input placeholder="Username" {...field} />
                     </FormControl>
@@ -106,7 +110,7 @@ export function ProfileForm() {
                 name="full_name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Full Name</FormLabel>
+                    <FormLabel className="dark:text-customGray">Full Name</FormLabel>
                     <FormControl>
                       <Input placeholder="Full name" {...field} />
                     </FormControl>
@@ -121,7 +125,7 @@ export function ProfileForm() {
                 name="avatar_url"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>avarat</FormLabel>
+                    <FormLabel className="dark:text-customGray">avarat</FormLabel>
                     <FormControl>
                       <Input placeholder="Full name" {...field} />
                     </FormControl>
