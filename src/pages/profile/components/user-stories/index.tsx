@@ -7,7 +7,7 @@ import { userAtom } from "@/store/auth";
 const UserProfileStories = () => {
   const [user] = useAtom(userAtom);
 
-  const userId = user?.user?.id
+  const userId = user?.user?.id;
   const {
     data: userStories,
     isLoading,

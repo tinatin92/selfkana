@@ -95,9 +95,7 @@ export function ProfileForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>
-                      Username
-                    </FormLabel>
+                    <FormLabel>Username</FormLabel>
                     <FormControl>
                       <Input placeholder="Username" {...field} />
                     </FormControl>
@@ -112,9 +110,7 @@ export function ProfileForm() {
                 name="full_name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>
-                      Full Name
-                    </FormLabel>
+                    <FormLabel>Full Name</FormLabel>
                     <FormControl>
                       <Input placeholder="Full name" {...field} />
                     </FormControl>
@@ -129,11 +125,9 @@ export function ProfileForm() {
                 name="avatar_url"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>
-                      avarat
-                    </FormLabel>
+                    <FormLabel>avarat</FormLabel>
                     <FormControl>
-                      <Input  placeholder="Full name" {...field} />
+                      <Input placeholder="Full name" {...field} />
                     </FormControl>
 
                     <FormMessage />

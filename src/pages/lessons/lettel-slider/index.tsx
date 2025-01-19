@@ -112,7 +112,10 @@ const LettetSlider: React.FC = () => {
                       <Button
                         onClick={handleClick}
                         className="w-[100px] h-[100px] bg-customRed rounded-full cursor-pointer flex items-center justify-center "
-                      > <FaPlay className="w-[40px] h-10  text-white" /></Button>
+                      >
+                        {" "}
+                        <FaPlay className="w-[40px] h-10  text-white" />
+                      </Button>
                     </div>
 
                     <div className="h-[150px] bg-customBage dark:bg-opacity-20  p-4 rounded-xl ">

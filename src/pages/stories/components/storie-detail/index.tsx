@@ -25,8 +25,11 @@ const StorieDetail = () => {
   if (isError || !storieDetail) {
     return <p>Country not found or error loading details.</p>;
   }
-  const baseUrl = "https://uekclpgahxazjutdlngm.supabase.co/storage/v1/object/public/";
-  const audioUrl = storieDetail.audio_url ? `${baseUrl}${storieDetail.audio_url}` : null;
+  const baseUrl =
+    "https://uekclpgahxazjutdlngm.supabase.co/storage/v1/object/public/";
+  const audioUrl = storieDetail.audio_url
+    ? `${baseUrl}${storieDetail.audio_url}`
+    : null;
 
   return (
     <Container>

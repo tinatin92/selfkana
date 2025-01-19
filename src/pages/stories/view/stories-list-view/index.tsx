@@ -1,11 +1,7 @@
-import StoriesList from "../../components/stories-list"
-
-
+import StoriesList from "../../components/stories-list";
 
 const StoriesListPage = () => {
-  return (
-   <StoriesList />
-  )
-}
+  return <StoriesList />;
+};
 
-export default StoriesListPage
+export default StoriesListPage;
