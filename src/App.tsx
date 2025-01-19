@@ -11,6 +11,8 @@ import { supabase } from "./supabase";
 import ProfilePage from "./pages/profile/view/profile-view";
 
 import CreateStoriesPage from "./pages/stories/view/create-storie-view";
+import StoriesList from "./pages/stories/components/stories-list";
+import StorieDetailPage from "./pages/stories/view/storie-detail-view";
 
 function App() {
   const [, setUser] = useAtom(userAtom);
@@ -39,6 +41,8 @@ function App() {
         <Route path="login" element={<LoginFormPage />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="create-storie" element={<CreateStoriesPage />} />
+        <Route path="storie-list" element={<StoriesList />} />
+        <Route path="storiedetail/:id" element={<StorieDetailPage />} />
       </Route>
     </Routes>
   );

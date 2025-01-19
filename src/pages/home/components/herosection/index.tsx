@@ -68,7 +68,7 @@ const Hero = () => {
           <div
             className="w-[80px] h-[80px] rounded-full bg-customGray cursor-pointer
            text-white text-2xl flex items-center
-            justify-center absolute bottom-7 right-7 xl:w-[100px] xl:h-[100px] xl:text-4xl xl:right-12"
+            justify-center absolute bottom-7 right-7 xl:w-[100px] xl:h-[100px] xl:text-4xl xl:right-12 dark:bg-white dark:text-customRed"
             onClick={handleClick}
           >
             あ
@@ -76,7 +76,7 @@ const Hero = () => {
           <div
             className="w-[150px] h-[150px] border-[4px] border-customGray rounded-full flex 
           items-center justify-center text-customGray absolute right-0 text-3xl font-semibold
-          xl:w-[220px] xl:h-[220px] xl:text-5xl xl:-top-16 xl:right-12
+          xl:w-[220px] xl:h-[220px] xl:text-5xl xl:-top-16 xl:right-12 dark:border-white dark:text-white
           "
           >
             かな

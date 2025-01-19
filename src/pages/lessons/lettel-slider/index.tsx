@@ -10,6 +10,7 @@ import {
 import { getLetters } from "@/supabase/lessons";
 import { useQuery } from "@tanstack/react-query";
 import { useRef } from "react";
+import { FaPlay } from "react-icons/fa6";
 
 /* const data = [
   {
@@ -83,7 +84,7 @@ const LettetSlider: React.FC = () => {
   }
   console.log(lettersData);
   return (
-    <div className="w-1/2  flex items-center justify-center px-12">
+    <div className="w-full xl:w-1/2  flex items-center justify-center px-12">
       <Carousel className="w-full">
         <CarouselContent>
           {lettersData?.map((letter, id) => (
@@ -91,7 +92,7 @@ const LettetSlider: React.FC = () => {
               <div className="flex flex-col gap-3">
                 <div className="flex gap-3 ">
                   <div className="flex flex-col w-1/2 gap-3">
-                    <div className="h-full bg-customBage p-4 rounded-xl ">
+                    <div className="h-full bg-customBage dark:bg-opacity-20 p-4 rounded-xl ">
                       <div className=" text-xl mb-4 text-center">Hiragana</div>
                       <div className=" flex items-center justify-center  text-[160px] font-medium h-full">
                         {letter.letter_georgian}
@@ -110,11 +111,11 @@ const LettetSlider: React.FC = () => {
                       </audio>
                       <Button
                         onClick={handleClick}
-                        className="w-[100px] h-[100px] bg-customRed rounded-full cursor-pointer flex items-center justify-center"
-                      ></Button>
+                        className="w-[100px] h-[100px] bg-customRed rounded-full cursor-pointer flex items-center justify-center "
+                      > <FaPlay className="w-[40px] h-10  text-white" /></Button>
                     </div>
 
-                    <div className="h-[150px] bg-customBage p-4 rounded-xl ">
+                    <div className="h-[150px] bg-customBage dark:bg-opacity-20  p-4 rounded-xl ">
                       <div className=" text-xl mb-4 text-center">Georgian</div>
                       <div className=" flex items-center justify-center  text-7xl font-medium">
                         {letter.letter_georgian}
@@ -122,7 +123,7 @@ const LettetSlider: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-customBage rounded-xl min-h-[150px] p-4 text-xl">
+                <div className="bg-customBage dark:bg-opacity-20  rounded-xl min-h-[150px] p-4 text-xl">
                   <div className="">{letter.description}</div>
                 </div>
               </div>

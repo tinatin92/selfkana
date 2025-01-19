@@ -5,7 +5,7 @@ import Canva from "../components/canva";
 const LessonsPage = () => {
   return (
     <Container>
-      <div className="flex gap-6 bg-black">
+      <div className="flex flex-col xl:flex-row xl:gap-6 justify-between ">
         <LettetSlider />
 
         <Canva />

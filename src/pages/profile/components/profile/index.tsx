@@ -81,7 +81,7 @@ export function ProfileForm() {
       </Link>
 
       <div className="w-full h-full flex items-center justify-center ">
-        <div className="w-[600px] p-12 bg-white rounded-3xl">
+        <div className="w-[600px] p-12 bg-white rounded-3xl bg-opacity-20">
           <div className="text-2xl font-semibold text-center mb-8">
             Fill your profile info
           </div>
@@ -95,7 +95,7 @@ export function ProfileForm() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="dark:text-customGray">
+                    <FormLabel>
                       Username
                     </FormLabel>
                     <FormControl>
@@ -112,7 +112,7 @@ export function ProfileForm() {
                 name="full_name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="dark:text-customGray">
+                    <FormLabel>
                       Full Name
                     </FormLabel>
                     <FormControl>
@@ -129,11 +129,11 @@ export function ProfileForm() {
                 name="avatar_url"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="dark:text-customGray">
+                    <FormLabel>
                       avarat
                     </FormLabel>
                     <FormControl>
-                      <Input placeholder="Full name" {...field} />
+                      <Input  placeholder="Full name" {...field} />
                     </FormControl>
 
                     <FormMessage />

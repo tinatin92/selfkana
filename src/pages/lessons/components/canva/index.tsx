@@ -127,8 +127,8 @@ const Canva = () => {
   };
 
   return (
-    <div>
-      <div className="text-center bg-customGray rounded-3xl overflow-hidden w-full h-[600px]">
+    <div className="w- xl:w-1/2">
+      <div className="text-center bg-customGray rounded-3xl overflow-hidden  h-[600px]">
         <canvas
           ref={canvasRef}
           onMouseDown={startDrawing}

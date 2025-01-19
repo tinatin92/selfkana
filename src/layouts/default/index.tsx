@@ -7,7 +7,7 @@ const Defaultlayout: React.FC = () => {
   return (
     <>
       <Header />
-      <main className="min-h-screen py-20">
+      <main className="min-h-screen py-20 ">
         <Outlet />
       </main>
       <Footer />

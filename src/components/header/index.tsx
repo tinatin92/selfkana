@@ -7,20 +7,26 @@ import { Button } from "../ui/button";
 import { userAtom } from "@/store/auth";
 import { useAtom } from "jotai";
 import i18n from "i18next";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import { ModeToggle } from "../mode-toggle";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [user] = useAtom(userAtom);
 
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   const handleChangeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
     setIsOpen(false);
+  };
+  const toggleMenu = () => {
+    if (window.innerWidth < 1280) {
+      setIsMenuOpen((prev) => !prev);
+    }
   };
 
   const { mutate: handleLogoutMutation } = useMutation({
@@ -29,35 +35,100 @@ const Header: React.FC = () => {
   });
 
   return (
-    <header className="w-full bg-customGray py-2  rounded-bl-[24px] rounded-br-[24px]">
+    <header className="relative w-full bg-customGray py-2  rounded-bl-[24px] rounded-br-[24px] border-b border-white ">
       <Container>
         <div className="flex items-center w-full">
           <NavLink to="/">
             <img src={logo} alt="Logo" />
           </NavLink>
-
-          <div className="text-white flex-1 ">
-            <nav className="flex gap-6 justify-center">
-              <NavLink className="text-white text-xl" to="lessons">
-                Lessons
-              </NavLink>
-              <NavLink className="text-white text-xl" to="lessons">
-                Lessons
-              </NavLink>
-              {t("Welcome")}
+          <div
+            className={`burger ${isMenuOpen ? "block" : "hidden"} text-white xl:flex-1 items-center bg-customGray
+            absolute z-20 top-[88px] right-0 flex-col
+           xl:static  xl:flex-row xl:items-center xl:gap-6`}
+          >
+            <nav className="flex flex-col xl:flex-row justify-between px-9 py-7 xl:py-0 items-center">
+              <div className="flex flex-col xl:flex-row gap-6 justify-center items-center">
+                <NavLink
+                  className="text-white text-xl"
+                  to="storie-list"
+                  onClick={toggleMenu}
+                >
+                  Stories
+                </NavLink>
+                <NavLink
+                  className="text-white text-xl"
+                  to="lessons"
+                  onClick={toggleMenu}
+                >
+                  Lessons
+                </NavLink>
+              </div>
               {!user ? (
-                <Button>
+                <Button onClick={toggleMenu}>
                   <NavLink to="/login">Login</NavLink>
                 </Button>
               ) : (
-                <div>
-                  <Button onClick={() => handleLogoutMutation()}>Logout</Button>
-                  <NavLink to="/profile">Profile</NavLink>
+                <div className="flex flex-col xl:flex-row justify-center items-center gap-5 xl:gap-0 mt-5 xl:mt-0">
+                  <NavLink
+                    className="text-white text-xl xl:mr-5"
+                    to="/profile"
+                    onClick={toggleMenu}
+                  >
+                    Profile
+                  </NavLink>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      handleLogoutMutation();
+                      toggleMenu();
+                    }}
+                  >
+                    Logout
+                  </Button>
                 </div>
               )}{" "}
             </nav>
           </div>
-          <div className="relative">
+
+          <div
+            className="hidden xl:block text-white flex-1 items-center bg-customGray gap-6 "
+          >
+            <nav className="flex flex-col xl:flex-row justify-between px-9 py-7 xl:py-0 items-center">
+              <div className="flex flex-col xl:flex-row gap-6 justify-center items-center">
+                <NavLink className="text-white text-xl" to="storie-list">
+                  Stories
+                </NavLink>
+                <NavLink className="text-white text-xl" to="lessons">
+                  Lessons
+                </NavLink>
+              </div>
+              {!user ? (
+                <Button onClick={toggleMenu}>
+                  <NavLink to="/login">Login</NavLink>
+                </Button>
+              ) : (
+                <div className="flex flex-col xl:flex-row justify-center items-center gap-5 xl:gap-0 mt-5 xl:mt-0">
+                  <NavLink
+                    className="text-white text-xl xl:mr-5"
+                    to="/profile"
+                    onClick={toggleMenu}
+                  >
+                    Profile
+                  </NavLink>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      handleLogoutMutation();
+                    }}
+                  >
+                    Logout
+                  </Button>
+                </div>
+              )}{" "}
+            </nav>
+          </div>
+
+          <div className="relative ml-auto">
             <Button className="relative" onClick={() => setIsOpen(!isOpen)}>
               lang
             </Button>
@@ -77,9 +148,16 @@ const Header: React.FC = () => {
                 </div>
               </div>
             )}
-            <div>
-              <ModeToggle />
-            </div>
+          </div>
+          <div className="ml-5">
+            <ModeToggle />
+          </div>
+
+          <div
+            onClick={toggleMenu}
+            className="xl:hidden ml-5 text-white text-3xl"
+          >
+            <RxHamburgerMenu />
           </div>
         </div>
       </Container>
