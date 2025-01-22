@@ -19,7 +19,7 @@ i18n.use(initReactI18next).init({
       translation: {
         "home-page": homePageKa,
         "storie-detail": storieDetailKa,
-        "lessons": lessonsPageKa,
+        lessons: lessonsPageKa,
         "create-storie": createStorieKa,
       },
     },
@@ -27,16 +27,16 @@ i18n.use(initReactI18next).init({
       translation: {
         "home-page": homePageJa,
         "storie-detail": storieDetailJa,
-        "lessons": lessonsPageJa,
-        "create-storie": createStorieJa
+        lessons: lessonsPageJa,
+        "create-storie": createStorieJa,
       },
     },
     en: {
       translation: {
         "home-page": homePageEn,
         "storie-detail": storieDetailEn,
-        "lessons": lessonsPageEn,
-        "create-storie": createStorieEn
+        lessons: lessonsPageEn,
+        "create-storie": createStorieEn,
       },
     },
   },

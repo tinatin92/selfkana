@@ -145,7 +145,8 @@ const Canva = () => {
           Save
         </Button>
 
-        <select className="dark:text-black w-full rounded-full px-3 bg-customBage"
+        <select
+          className="dark:text-black w-full rounded-full px-3 bg-customBage"
           onChange={(e) => setStrokeColor(e.target.value)}
           defaultValue="white"
         >

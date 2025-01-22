@@ -9,7 +9,6 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
 
-
 type StoriesFilterFormData = {
   title: string;
 };
@@ -61,7 +60,6 @@ const StoriesList: React.FC = () => {
 
   return (
     <Container>
-      
       <div className="flex justify-center items-center mb-10 ">
         <Controller
           control={control}

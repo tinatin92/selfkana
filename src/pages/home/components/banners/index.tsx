@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Banners: React.FC = () => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <section className="mt-28">
@@ -15,7 +15,7 @@ const Banners: React.FC = () => {
            bg-math-grid bg-60px"
           >
             <div className="text-2xl leading-normal font-semibold">
-             {t('home-page.banner1')}
+              {t("home-page.banner1")}
             </div>
             <div className="mt-12">
               <Link to="lessons">
@@ -29,7 +29,7 @@ const Banners: React.FC = () => {
            bg-math-grid bg-60px"
           >
             <div className="text-2xl leading-normal font-semibold">
-            {t('home-page.banner2')}
+              {t("home-page.banner2")}
             </div>
             <div className="mt-12">
               <Link to="storie-list">
@@ -43,7 +43,7 @@ const Banners: React.FC = () => {
            bg-math-grid bg-60px"
           >
             <div className="text-2xl leading-normal font-semibold">
-            {t('home-page.banner3')}
+              {t("home-page.banner3")}
             </div>
             <div className="mt-12">
               <Link to="signup">

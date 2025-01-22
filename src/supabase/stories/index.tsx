@@ -22,7 +22,6 @@ export const getStories = async (title?: string) => {
   }
 };
 
-
 export const getStoryById = async (id: number) => {
   try {
     const { data, error } = await supabase
@@ -59,13 +58,15 @@ export const getUserStories = async (userId: string) => {
   }
 };
 
-
-export const updateStorie = async (id: number, payload: { 
-  title_ja?: string | null; 
-  title_en?: string | null; 
-  description?: string | null; 
-  audio_url?: string | null;
-}) => {
+export const updateStorie = async (
+  id: number,
+  payload: {
+    title_ja?: string | null;
+    title_en?: string | null;
+    description?: string | null;
+    audio_url?: string | null;
+  },
+) => {
   const { data, error } = await supabase
     .from("books")
     .update(payload)

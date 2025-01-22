@@ -26,14 +26,19 @@ type StorieTypes = {
   audio_url?: File;
 };
 
-const CreateStorie:React.FC = () => {
+const CreateStorie: React.FC = () => {
   const [user] = useAtom(userAtom);
 
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const form = useForm<StorieTypes>({
     resolver: zodResolver(storieFormSchema),
-    defaultValues: { title_ja: "",title_en: "", description: "", audio_url: undefined },
+    defaultValues: {
+      title_ja: "",
+      title_en: "",
+      description: "",
+      audio_url: undefined,
+    },
   });
 
   const onSubmit = (values: StorieTypes) => {
@@ -61,14 +66,13 @@ const CreateStorie:React.FC = () => {
   return (
     <Container>
       <Banner>
-      <div className="text-2xl md:text-4xl">
+        <div className="text-2xl md:text-4xl">
           {t("create-storie.bannerText1")}
         </div>
         <div className="text-4xl md:text-6xl mt-7 inline-block bg-customRed font-semibold">
-        {t("create-storie.bannerText2")}
+          {t("create-storie.bannerText2")}
         </div>
       </Banner>
-     
 
       <div className=" p-6 lg:p-12 bg-customBage rounded-3xl dark:bg-opacity-20">
         <Form {...form}>
@@ -90,7 +94,7 @@ const CreateStorie:React.FC = () => {
                 </FormItem>
               )}
             />
-              <FormField
+            <FormField
               control={form.control}
               name="title_en"
               render={({ field }) => (

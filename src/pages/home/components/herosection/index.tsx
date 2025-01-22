@@ -4,7 +4,7 @@ import audio from "@/assets/a.mp3";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-const Hero:React.FC= () => {
+const Hero: React.FC = () => {
   const { t } = useTranslation();
   // console.log(t("Welcome to React"));
 

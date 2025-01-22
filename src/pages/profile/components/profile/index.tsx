@@ -98,7 +98,9 @@ const ProfileForm: React.FC = () => {
           <Link to="/create-storie">
             <Button>Create Storie</Button>
           </Link>
-          <Button variant='outline' onClick={handleOpenForm}>Edit Profile</Button>
+          <Button variant="outline" onClick={handleOpenForm}>
+            Edit Profile
+          </Button>
         </div>
       </div>
 

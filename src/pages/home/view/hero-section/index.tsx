@@ -7,7 +7,7 @@ const HeroSection = () => {
       <Hero />
       <Banners />
     </div>
-  )
+  );
 };
 
 export default HeroSection;
