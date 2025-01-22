@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/button";
 import Container from "@/components/ui/container";
 import audio from "@/assets/a.mp3";
 import { useRef } from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-const Hero = () => {
+const Hero:React.FC= () => {
   const { t } = useTranslation();
-  console.log(t("Welcome to React"));
+  // console.log(t("Welcome to React"));
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -27,16 +27,10 @@ const Hero = () => {
          lg:w-[650px] xl:w-2/3 lg:p-12
         "
         >
-          <div className="text-white text-4xl font-semibold xl:text-5xl">
-            კეთილი იყოს შენი მობრძანება
+          <div className="text-white leading-normal  xl:leading-normal  text-4xl font-semibold xl:text-5xl w-2/3">
+            {t("home-page.heroText")}
           </div>
-          <div className="text-white text-2xl mt-6">
-            ჩვენთან აღმოაჩენ იაპონურ ლიტერატურას,
-          </div>
-          <div>
-            {/* {t("home-page.Welcome")} */}
-            <Trans>home-page.Welcome</Trans>
-          </div>
+
           <div
             className=" flex justify-end relative z-0 text-5xl lg:text-7xl text-customRed mt-16 xl:mt-20 text-center 
         "

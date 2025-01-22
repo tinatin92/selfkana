@@ -131,12 +131,18 @@ const Header: React.FC = () => {
               lang
             </Button>
             {isOpen && (
-              <div className="z-10 absolute top-14 left-1/2 -translate-x-1/2 bg-white border  shadow-md rounded-sm">
+              <div className="z-10 absolute top-14 left-1/2 -translate-x-1/2 bg-white border dark:bg-opacity-20 shadow-md rounded-sm">
                 <div
                   className="cursor-pointer p-4 hover:bg-slate-300 transition duration-300"
                   onClick={() => handleChangeLanguage("ka")}
                 >
                   GEO
+                </div>
+                <div
+                  className="cursor-pointer p-4 hover:bg-slate-300 transition duration-300"
+                  onClick={() => handleChangeLanguage("en")}
+                >
+                  ENG
                 </div>
                 <div
                   className="cursor-pointer p-4 hover:bg-slate-300 transition duration-300"

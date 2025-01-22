@@ -13,6 +13,7 @@ import ProfilePage from "./pages/profile/view/profile-view";
 import CreateStoriesPage from "./pages/stories/view/create-storie-view";
 import StoriesList from "./pages/stories/components/stories-list";
 import StorieDetailPage from "./pages/stories/view/storie-detail-view";
+import UpdateStoriePage from "./pages/stories/view/update-storie";
 
 function App() {
   const [, setUser] = useAtom(userAtom);
@@ -43,6 +44,7 @@ function App() {
         <Route path="create-storie" element={<CreateStoriesPage />} />
         <Route path="storie-list" element={<StoriesList />} />
         <Route path="storiedetail/:id" element={<StorieDetailPage />} />
+        <Route path="update-storie/:id" element={<UpdateStoriePage />} />
       </Route>
     </Routes>
   );

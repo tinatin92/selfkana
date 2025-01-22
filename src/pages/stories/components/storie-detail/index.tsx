@@ -44,8 +44,9 @@ const StorieDetail = () => {
         )}
       </div>
       <div className=" p-6 rounded-3xl bg-customBage dark:bg-opacity-20">
-        <div className="text-4xl text-center mb-7 font-semibold">
-          {storieDetail.title}
+        <div className="  mb-7 font-semibold flex gap-4 items-center">
+          <div className="text-4xl">{storieDetail.title_ja}</div>
+          <div className="text-2xl">({storieDetail.title_en})</div>
         </div>
         <div className="">{storieDetail.description}</div>
       </div>

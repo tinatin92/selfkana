@@ -84,7 +84,7 @@ const LettetSlider: React.FC = () => {
   }
   console.log(lettersData);
   return (
-    <div className="w-full xl:w-1/2  flex items-center justify-center px-12">
+    <div className="w-full xl:w-1/2  flex items-center justify-center md:px-12 mb-9 xl:mb-0">
       <Carousel className="w-full">
         <CarouselContent>
           {lettersData?.map((letter, id) => (
@@ -94,8 +94,8 @@ const LettetSlider: React.FC = () => {
                   <div className="flex flex-col w-1/2 gap-3">
                     <div className="h-full bg-customBage dark:bg-opacity-20 p-4 rounded-xl ">
                       <div className=" text-xl mb-4 text-center">Hiragana</div>
-                      <div className=" flex items-center justify-center  text-[160px] font-medium h-full">
-                        {letter.letter_georgian}
+                      <div className=" flex items-center justify-center text-[80px]  md:text-[160px] font-medium h-full">
+                        {letter.letter_hiragana}
                       </div>
                     </div>
                   </div>

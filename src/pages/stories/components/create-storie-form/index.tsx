@@ -16,19 +16,24 @@ import { storieFormSchema } from "./schema";
 import { supabase } from "@/supabase";
 import { useAtom } from "jotai";
 import { userAtom } from "@/store/auth";
+import Banner from "@/components/ui/banner";
+import { useTranslation } from "react-i18next";
 
 type StorieTypes = {
-  title: string;
+  title_ja: string;
+  title_en: string;
   description: string;
   audio_url?: File;
 };
 
-const CreateStorie = () => {
+const CreateStorie:React.FC = () => {
   const [user] = useAtom(userAtom);
+
+  const { t } = useTranslation()
 
   const form = useForm<StorieTypes>({
     resolver: zodResolver(storieFormSchema),
-    defaultValues: { title: "", description: "", audio_url: undefined },
+    defaultValues: { title_ja: "",title_en: "", description: "", audio_url: undefined },
   });
 
   const onSubmit = (values: StorieTypes) => {
@@ -38,7 +43,8 @@ const CreateStorie = () => {
         .upload(values?.audio_url?.name, values.audio_url)
         .then((res) => {
           return supabase.from("books").insert({
-            title: values.title,
+            title_ja: values.title_ja,
+            title_en: values.title_en,
             description: values.description,
             audio_url: res.data?.fullPath,
             user_id: user?.user?.id,
@@ -54,20 +60,17 @@ const CreateStorie = () => {
 
   return (
     <Container>
-      <div
-        className=" border-[12px] p-6 lg:p-12 border-white w-full
-       rounded-3xl bg-customGray bg-math-grid bg-60px 
-        text-white  mb-20 "
-      >
-        <div className="text-2xl md:text-4xl">
-          გაქვს საინტერესო ისტორია, ან ნაწარმოები იაპონურ ენაზე?
+      <Banner>
+      <div className="text-2xl md:text-4xl">
+          {t("create-storie.bannerText1")}
         </div>
         <div className="text-4xl md:text-6xl mt-7 inline-block bg-customRed font-semibold">
-          გაგვიზიარე ის!
+        {t("create-storie.bannerText2")}
         </div>
-      </div>
+      </Banner>
+     
 
-      <div className="lg:px-12">
+      <div className=" p-6 lg:p-12 bg-customBage rounded-3xl dark:bg-opacity-20">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -75,10 +78,24 @@ const CreateStorie = () => {
           >
             <FormField
               control={form.control}
-              name="title"
+              name="title_ja"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel>Japanese Title</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Title" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+              <FormField
+              control={form.control}
+              name="title_en"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>English Title</FormLabel>
                   <FormControl>
                     <Input placeholder="Title" {...field} />
                   </FormControl>

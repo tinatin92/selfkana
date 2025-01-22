@@ -40,7 +40,7 @@ export function SignUpForm() {
   return (
     <Container>
       <div className="w-full h-full flex items-center justify-center ">
-        <div className="w-[600px] p-12 bg-white rounded-3xl">
+        <div className="w-[600px] p-12 bg-customBage dark:bg-opacity-20 rounded-3xl">
           <div className="text-2xl font-semibold text-center mb-8">
             Sugn Up on SelfKana
           </div>
@@ -84,9 +84,9 @@ export function SignUpForm() {
               </Button>
             </form>
           </Form>
-          <div>
+          <div className="flex  mt-6 justify-center gap-4 items-center">
             <div>Are you registered already?</div>
-            <div>
+            <div className="text-xl font-semibold">
               <Link to="/login">Login</Link>
             </div>
           </div>
