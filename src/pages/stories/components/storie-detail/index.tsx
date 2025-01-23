@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getStoryById } from "@/supabase/stories";
 import Container from "@/components/ui/container";
+import { supabase } from "@/supabase";
 
 const StorieDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -25,22 +26,20 @@ const StorieDetail = () => {
   if (isError || !storieDetail) {
     return <p>Country not found or error loading details.</p>;
   }
-  const baseUrl =
-    "https://uekclpgahxazjutdlngm.supabase.co/storage/v1/object/public/";
+  
+
   const audioUrl = storieDetail.audio_url
-    ? `${baseUrl}${storieDetail.audio_url}`
+    ? supabase.storage.from("books_url").getPublicUrl(storieDetail.audio_url).data.publicUrl
     : null;
 
   return (
     <Container>
       <div className="bg-customRed p-3 rounded-2xl mb-10 flex items-center justify-center ">
-        {storieDetail.audio_url ? (
-          <audio controls>
-            <source src={audioUrl ?? undefined} type="audio/mp3" />
-            Your browser does not support the audio element.
-          </audio>
-        ) : (
-          <p>No audio available for this story.</p>
+      {audioUrl && (
+          <audio
+            src={audioUrl}
+            controls
+          />
         )}
       </div>
       <div className=" p-6 rounded-3xl bg-customBage dark:bg-opacity-20">

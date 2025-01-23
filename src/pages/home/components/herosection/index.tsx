@@ -3,6 +3,8 @@ import Container from "@/components/ui/container";
 import audio from "@/assets/a.mp3";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { APP_PATHS } from "@/routes/default/index.enum";
+import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -44,7 +46,7 @@ const Hero: React.FC = () => {
               Selfカな
             </span>
           </div>
-          <Button className="mt-20">Sign Up</Button>
+          <Link to={APP_PATHS.SIGNUP}><Button className="mt-20">Sign Up</Button></Link>
         </div>
 
         <div className="relative hidden lg:block flex-1">

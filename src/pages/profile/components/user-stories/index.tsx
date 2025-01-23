@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
-import { getUserStories } from "@/supabase/stories";
+import { useMutation, useQuery, QueryClient  } from "@tanstack/react-query";
+import { deleteStory, getUserStories } from "@/supabase/stories";
 import Container from "@/components/ui/container";
 import { useAtom } from "jotai";
 import { userAtom } from "@/store/auth";
@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 
 const UserProfileStories = () => {
   const [user] = useAtom(userAtom);
+
+  const queryClient = new QueryClient();
 
   const userId = user?.user?.id;
   const {
@@ -20,6 +22,22 @@ const UserProfileStories = () => {
     queryFn: () => getUserStories(userId),
     enabled: !!userId,
   });
+
+  const { mutate: deletStorieMutation } = useMutation({
+    mutationKey: ["delete-storie"],
+    mutationFn: deleteStory,
+    onSuccess: (_, deletedStorieId) => {
+      
+      queryClient.setQueryData(
+        ["user-stories", userId], 
+        (oldData: any[]) => oldData.filter(storie => storie.id !== deletedStorieId)
+      );
+    }
+  });
+  
+  const handleStorieDelete = (storieId: number) => {
+    deletStorieMutation(storieId);
+  };
 
   if (isLoading) {
     return <p>Loading your stories...</p>;
@@ -55,7 +73,10 @@ const UserProfileStories = () => {
                     <LuPencil />
                   </Link>
                 </div>
-                <div className="text-2xl cursor-pointer p-3 rounded-full hover:bg-slate-300">
+                <div
+                  onClick={() => handleStorieDelete(storie.id)}
+                  className="text-2xl cursor-pointer p-3 rounded-full hover:bg-slate-300"
+                >
                   <HiOutlineTrash />
                 </div>
               </div>

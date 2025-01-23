@@ -11,6 +11,8 @@ import i18n from "i18next";
 import { useState } from "react";
 import { ModeToggle } from "../mode-toggle";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { APP_PATHS } from "@/routes/default/index.enum";
+
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +40,7 @@ const Header: React.FC = () => {
     <header className="relative w-full bg-customGray py-2  rounded-bl-[24px] rounded-br-[24px] border-b border-white ">
       <Container>
         <div className="flex items-center w-full">
-          <NavLink to="/">
+          <NavLink to={APP_PATHS.INDEX}>
             <img src={logo} alt="Logo" />
           </NavLink>
           <div
@@ -50,14 +52,14 @@ const Header: React.FC = () => {
               <div className="flex flex-col xl:flex-row gap-6 justify-center items-center">
                 <NavLink
                   className="text-white text-xl"
-                  to="storie-list"
+                  to={APP_PATHS.STORIE_LIST}
                   onClick={toggleMenu}
                 >
                   Stories
                 </NavLink>
                 <NavLink
                   className="text-white text-xl"
-                  to="lessons"
+                  to={APP_PATHS.LESSONS}
                   onClick={toggleMenu}
                 >
                   Lessons
@@ -65,13 +67,13 @@ const Header: React.FC = () => {
               </div>
               {!user ? (
                 <Button onClick={toggleMenu}>
-                  <NavLink to="/login">Login</NavLink>
+                  <NavLink to={APP_PATHS.LOGIN}>Login</NavLink>
                 </Button>
               ) : (
                 <div className="flex flex-col xl:flex-row justify-center items-center gap-5 xl:gap-0 mt-5 xl:mt-0">
                   <NavLink
                     className="text-white text-xl xl:mr-5"
-                    to="/profile"
+                    to={APP_PATHS.PROFILE}
                     onClick={toggleMenu}
                   >
                     Profile
@@ -93,22 +95,22 @@ const Header: React.FC = () => {
           <div className="hidden xl:block text-white flex-1 items-center bg-customGray gap-6 ">
             <nav className="flex flex-col xl:flex-row justify-between px-9 py-7 xl:py-0 items-center">
               <div className="flex flex-col xl:flex-row gap-6 justify-center items-center">
-                <NavLink className="text-white text-xl" to="storie-list">
+                <NavLink className="text-white text-xl" to={APP_PATHS.STORIE_LIST}>
                   Stories
                 </NavLink>
-                <NavLink className="text-white text-xl" to="lessons">
+                <NavLink className="text-white text-xl" to={APP_PATHS.LESSONS}>
                   Lessons
                 </NavLink>
               </div>
               {!user ? (
                 <Button onClick={toggleMenu}>
-                  <NavLink to="/login">Login</NavLink>
+                  <NavLink to={APP_PATHS.LOGIN}>Login</NavLink>
                 </Button>
               ) : (
                 <div className="flex flex-col xl:flex-row justify-center items-center gap-5 xl:gap-0 mt-5 xl:mt-0">
                   <NavLink
                     className="text-white text-xl xl:mr-5"
-                    to="/profile"
+                    to={APP_PATHS.PROFILE}
                     onClick={toggleMenu}
                   >
                     Profile

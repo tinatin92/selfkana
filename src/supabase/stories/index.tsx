@@ -77,3 +77,21 @@ export const updateStorie = async (
   if (error) throw error;
   return data;
 };
+
+export const deleteStory = async (id: number) => {
+  try {
+    const { data, error } = await supabase
+      .from("books")
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      throw error;
+    }
+
+    return data;
+  } catch (error) {
+    console.error("Error deleting book:", error);
+    throw error;
+  }
+};

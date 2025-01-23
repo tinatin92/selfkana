@@ -68,11 +68,13 @@ const UpdateStorie = () => {
         }
 
         const fileName = `${Date.now()}-${values.audio_url.name}`;
+
         const { data, error: uploadError } = await supabase.storage
           .from("books_url")
           .upload(fileName, values.audio_url);
 
         if (uploadError) throw uploadError;
+
         audioUrl = data?.path || null;
       }
 
@@ -84,11 +86,12 @@ const UpdateStorie = () => {
       };
 
       await updateStorie(storyId, payload);
-      // Add navigation or success message here
     } catch (error) {
       console.error("Error updating story:", error);
     }
   };
+
+ 
 
   if (isLoading) return <p>Loading story details...</p>;
 
