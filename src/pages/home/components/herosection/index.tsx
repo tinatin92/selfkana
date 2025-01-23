@@ -46,7 +46,9 @@ const Hero: React.FC = () => {
               Selfカな
             </span>
           </div>
-          <Link to={APP_PATHS.SIGNUP}><Button className="mt-20">Sign Up</Button></Link>
+          <Link to={APP_PATHS.SIGNUP}>
+            <Button className="mt-20">Sign Up</Button>
+          </Link>
         </div>
 
         <div className="relative hidden lg:block flex-1">

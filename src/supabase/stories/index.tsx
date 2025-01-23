@@ -80,10 +80,7 @@ export const updateStorie = async (
 
 export const deleteStory = async (id: number) => {
   try {
-    const { data, error } = await supabase
-      .from("books")
-      .delete()
-      .eq('id', id);
+    const { data, error } = await supabase.from("books").delete().eq("id", id);
 
     if (error) {
       throw error;

@@ -57,7 +57,7 @@ const LetterSlider: React.FC = () => {
                       <Button
                         onClick={() => {
                           const audioElement = document.getElementById(
-                            `audio-${id}`
+                            `audio-${id}`,
                           ) as HTMLAudioElement | null;
                           if (audioElement) {
                             audioElement.play().catch((error) => {

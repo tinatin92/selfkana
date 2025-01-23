@@ -91,8 +91,6 @@ const UpdateStorie = () => {
     }
   };
 
- 
-
   if (isLoading) return <p>Loading story details...</p>;
 
   return (

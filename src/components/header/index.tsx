@@ -13,7 +13,6 @@ import { ModeToggle } from "../mode-toggle";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { APP_PATHS } from "@/routes/default/index.enum";
 
-
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,7 +94,10 @@ const Header: React.FC = () => {
           <div className="hidden xl:block text-white flex-1 items-center bg-customGray gap-6 ">
             <nav className="flex flex-col xl:flex-row justify-between px-9 py-7 xl:py-0 items-center">
               <div className="flex flex-col xl:flex-row gap-6 justify-center items-center">
-                <NavLink className="text-white text-xl" to={APP_PATHS.STORIE_LIST}>
+                <NavLink
+                  className="text-white text-xl"
+                  to={APP_PATHS.STORIE_LIST}
+                >
                   Stories
                 </NavLink>
                 <NavLink className="text-white text-xl" to={APP_PATHS.LESSONS}>

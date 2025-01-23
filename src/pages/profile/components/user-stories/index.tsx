@@ -1,4 +1,4 @@
-import { useMutation, useQuery, QueryClient  } from "@tanstack/react-query";
+import { useMutation, useQuery, QueryClient } from "@tanstack/react-query";
 import { deleteStory, getUserStories } from "@/supabase/stories";
 import Container from "@/components/ui/container";
 import { useAtom } from "jotai";
@@ -27,14 +27,12 @@ const UserProfileStories = () => {
     mutationKey: ["delete-storie"],
     mutationFn: deleteStory,
     onSuccess: (_, deletedStorieId) => {
-      
-      queryClient.setQueryData(
-        ["user-stories", userId], 
-        (oldData: any[]) => oldData.filter(storie => storie.id !== deletedStorieId)
+      queryClient.setQueryData(["user-stories", userId], (oldData: any[]) =>
+        oldData.filter((storie) => storie.id !== deletedStorieId),
       );
-    }
+    },
   });
-  
+
   const handleStorieDelete = (storieId: number) => {
     deletStorieMutation(storieId);
   };

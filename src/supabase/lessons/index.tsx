@@ -5,9 +5,7 @@ export const getLetters = async () => {
     const { data, error } = await supabase
       .from("letters")
       .select("*")
-      .order('id'); 
-    
-   
+      .order("id");
 
     if (error) {
       throw error;

@@ -1,4 +1,3 @@
-
 import { useAtom } from "jotai";
 import { userAtom } from "./store/auth";
 import { useEffect } from "react";

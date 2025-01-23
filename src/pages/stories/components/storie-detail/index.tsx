@@ -26,21 +26,16 @@ const StorieDetail = () => {
   if (isError || !storieDetail) {
     return <p>Country not found or error loading details.</p>;
   }
-  
 
   const audioUrl = storieDetail.audio_url
-    ? supabase.storage.from("books_url").getPublicUrl(storieDetail.audio_url).data.publicUrl
+    ? supabase.storage.from("books_url").getPublicUrl(storieDetail.audio_url)
+        .data.publicUrl
     : null;
 
   return (
     <Container>
       <div className="bg-customRed p-3 rounded-2xl mb-10 flex items-center justify-center ">
-      {audioUrl && (
-          <audio
-            src={audioUrl}
-            controls
-          />
-        )}
+        {audioUrl && <audio src={audioUrl} controls />}
       </div>
       <div className=" p-6 rounded-3xl bg-customBage dark:bg-opacity-20">
         <div className="  mb-7 font-semibold flex gap-4 items-center">
