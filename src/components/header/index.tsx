@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import Container from "../ui/container";
 import logo from "@/assets/logo-big.svg";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { logout } from "@/supabase/auth";
 import { Button } from "../ui/button";
 import { userAtom } from "@/store/auth";
@@ -12,6 +12,7 @@ import { useState } from "react";
 import { ModeToggle } from "../mode-toggle";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { APP_PATHS } from "@/routes/default/index.enum";
+import { getProfileInfo } from "@/supabase/account";
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,12 @@ const Header: React.FC = () => {
   const [user] = useAtom(userAtom);
 
   // const { t } = useTranslation();
+
+  const { data: profileData } = useQuery({
+    queryKey: ["profileData"],
+    queryFn: () => getProfileInfo(user?.user.id),
+    // onSuccess: (data) => reset(data),
+  });
 
   const handleChangeLanguage = (lang: string) => {
     i18n.changeLanguage(lang);
@@ -110,13 +117,16 @@ const Header: React.FC = () => {
                 </Button>
               ) : (
                 <div className="flex flex-col xl:flex-row justify-center items-center gap-5 xl:gap-0 mt-5 xl:mt-0">
-                  <NavLink
-                    className="text-white text-xl xl:mr-5"
-                    to={APP_PATHS.PROFILE}
-                    onClick={toggleMenu}
-                  >
-                    Profile
-                  </NavLink>
+                  {profileData && (
+                    <NavLink
+                      className="text-2xl w-14  h-14 bg-customRed rounded-full flex items-center justify-center text-white font-semibold  xl:mr-5"
+                      to={APP_PATHS.PROFILE}
+                      onClick={toggleMenu}
+                    >
+                      {profileData.username?.[0].toUpperCase()}
+                    </NavLink>
+                  )}
+
                   <Button
                     variant="outline"
                     onClick={() => {
@@ -131,7 +141,7 @@ const Header: React.FC = () => {
           </div>
 
           <div className="relative ml-auto">
-            <Button className="relative" onClick={() => setIsOpen(!isOpen)}>
+            <Button variant='secondary' className="relative " onClick={() => setIsOpen(!isOpen)}>
               lang
             </Button>
             {isOpen && (

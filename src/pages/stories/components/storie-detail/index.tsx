@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getStoryById } from "@/supabase/stories";
 import Container from "@/components/ui/container";
 import { supabase } from "@/supabase";
+import Spinner from "@/components/ui/spinner";
 
 const StorieDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,7 +21,7 @@ const StorieDetail = () => {
   });
 
   if (isLoading) {
-    return <p>Loading country details...</p>;
+    return  <Spinner />;
   }
 
   if (isError || !storieDetail) {

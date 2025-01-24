@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
+import Spinner from "@/components/ui/spinner";
 
 type StoriesFilterFormData = {
   title: string;
@@ -51,7 +52,7 @@ const StoriesList: React.FC = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return  <Spinner />;
   }
 
   if (error) {
@@ -90,8 +91,8 @@ const StoriesList: React.FC = () => {
                 </div>
               </div>
               <div className="mt-4 line-clamp-3">{storie.description}</div>
-              <div className="font-semibold text-customRed underline text-right mt-6">
-                <Link to={`/storiedetail/${storie.id}`}>წაიკითხე მეტი</Link>
+              <div className=" flex justify-end font-semibold text-customRed  text-right mt-6">
+                <Link className="py-3 px-6 bg-opacity-80 rounded-full dark:bg-opacity-80 dark:bg-white" to={`/storiedetail/${storie.id}`}>წაიკითხე მეტი</Link>
               </div>
             </div>
           );

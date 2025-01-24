@@ -18,6 +18,8 @@ import { useAtom } from "jotai";
 import { userAtom } from "@/store/auth";
 import Banner from "@/components/ui/banner";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { APP_PATHS } from "@/routes/default/index.enum";
 
 type StorieTypes = {
   title_ja: string;
@@ -30,6 +32,8 @@ const CreateStorie: React.FC = () => {
   const [user] = useAtom(userAtom);
 
   const { t } = useTranslation();
+
+  const navigate = useNavigate()
 
   const form = useForm<StorieTypes>({
     resolver: zodResolver(storieFormSchema),
@@ -55,12 +59,12 @@ const CreateStorie: React.FC = () => {
             user_id: user?.user?.id,
           });
         })
-        .then((res) => {
-          console.log("succsessfully created storie", res);
+        .then(() => {
+          navigate("/"+ APP_PATHS.PROFILE ); 
         });
     }
 
-    console.log("storie form values", values);
+     
   };
 
   return (

@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Spinner from "@/components/ui/spinner";
 import { getLetters } from "@/supabase/lessons";
 import { useQuery } from "@tanstack/react-query";
 import { FaPlay } from "react-icons/fa6";
@@ -21,7 +22,7 @@ const LetterSlider: React.FC = () => {
   });
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Spinner />
   }
 
   if (error) {
@@ -30,6 +31,7 @@ const LetterSlider: React.FC = () => {
 
   return (
     <div className="w-full xl:w-1/2 flex items-center justify-center md:px-12 mb-9 xl:mb-0">
+     
       <Carousel className="w-full">
         <CarouselContent>
           {lettersData?.map((letter, id) => (

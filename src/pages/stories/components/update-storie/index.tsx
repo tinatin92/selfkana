@@ -14,10 +14,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/supabase";
 import { storieFormSchema } from "./schema";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getStoryById, updateStorie } from "@/supabase/stories";
 import { useEffect } from "react";
+import Spinner from "@/components/ui/spinner";
+import { APP_PATHS } from "@/routes/default/index.enum";
 
 type StorieTypes = {
   audio_url?: File | string | null;
@@ -32,6 +34,8 @@ type StorieTypes = {
 const UpdateStorie = () => {
   const { id } = useParams<{ id: string }>();
   const storyId = id ? parseInt(id, 10) : undefined;
+
+  const navigate = useNavigate()
 
   const { data: storieDetail, isLoading } = useQuery({
     queryKey: ["storie-detail", storyId],
@@ -86,12 +90,13 @@ const UpdateStorie = () => {
       };
 
       await updateStorie(storyId, payload);
+      navigate('/' + APP_PATHS.PROFILE);
     } catch (error) {
       console.error("Error updating story:", error);
     }
   };
 
-  if (isLoading) return <p>Loading story details...</p>;
+  if (isLoading) return  <Spinner />
 
   return (
     <Container>

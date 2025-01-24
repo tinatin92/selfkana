@@ -10,12 +10,13 @@ import { CreateStoriesPage } from "./create-storie";
 import { UpdateStoriePage } from "./update-storie";
 import { StorieDetailPage } from "./storie-detail";
 import { StoriesList } from "./storie-list";
+import Spinner from "@/components/ui/spinner";
 
 export const ROUTES = [
   <Route
     path={APP_PATHS.INDEX}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <HeroSection />
       </Suspense>
     }
@@ -24,7 +25,7 @@ export const ROUTES = [
   <Route
     path={APP_PATHS.LESSONS}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <LessonsPage />
       </Suspense>
     }
@@ -33,7 +34,7 @@ export const ROUTES = [
   <Route
     path={APP_PATHS.SIGNUP}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <SignUpPage />
       </Suspense>
     }
@@ -42,7 +43,7 @@ export const ROUTES = [
   <Route
     path={APP_PATHS.LOGIN}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <LoginFormPage />
       </Suspense>
     }
@@ -51,7 +52,7 @@ export const ROUTES = [
   <Route
     path={APP_PATHS.PROFILE}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <ProfilePage />
       </Suspense>
     }
@@ -60,7 +61,7 @@ export const ROUTES = [
   <Route
     path={APP_PATHS.CREATE_STORIE}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <CreateStoriesPage />
       </Suspense>
     }
@@ -69,7 +70,7 @@ export const ROUTES = [
   <Route
     path={APP_PATHS.STORIE_LIST}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <StoriesList />
       </Suspense>
     }
@@ -78,7 +79,7 @@ export const ROUTES = [
   <Route
     path={APP_PATHS.STORIE_DETAIL + "/:id"}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <StorieDetailPage />
       </Suspense>
     }
@@ -87,7 +88,7 @@ export const ROUTES = [
   <Route
     path={APP_PATHS.UPDATE_STORIE + "/:id"}
     element={
-      <Suspense fallback={<p>Loading layout...</p>}>
+      <Suspense fallback={ <Spinner />}>
         <UpdateStoriePage />
       </Suspense>
     }

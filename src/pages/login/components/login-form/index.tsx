@@ -17,6 +17,7 @@ import { useMutation } from "@tanstack/react-query";
 import { login } from "@/supabase/auth";
 import { loginSFormSchema } from "./schema";
 import { Link, useNavigate } from "react-router-dom";
+import { APP_PATHS } from "@/routes/default/index.enum";
 
 type LoginTypes = {
   email: string;
@@ -93,7 +94,7 @@ export function LoginForm() {
           <div className="flex  mt-6 justify-center gap-4 items-center">
             <div>Are not you registered yet?</div>
             <div className="text-xl font-semibold">
-              <Link to="/signup">Signup</Link>
+              <Link to={'/' + APP_PATHS.SIGNUP }>Signup</Link>
             </div>
           </div>
         </div>
