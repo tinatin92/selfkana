@@ -21,7 +21,7 @@ const StorieDetail = () => {
   });
 
   if (isLoading) {
-    return  <Spinner />;
+    return <Spinner />;
   }
 
   if (isError || !storieDetail) {

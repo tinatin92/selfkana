@@ -39,7 +39,7 @@ const UserProfileStories = () => {
   };
 
   if (isLoading) {
-    return  <Spinner />;
+    return <Spinner />;
   }
 
   if (isError) {
@@ -82,8 +82,13 @@ const UserProfileStories = () => {
             </div>
             <div className="mt-4 line-clamp-3">{storie.description}</div>
             <div className=" flex justify-end font-semibold text-customRed  text-right mt-6">
-                <Link className="py-3 px-6 bg-opacity-80 rounded-full dark:bg-opacity-80 dark:bg-white" to={`/storiedetail/${storie.id}`}>წაიკითხე მეტი</Link>
-              </div>
+              <Link
+                className="py-3 px-6 bg-opacity-80 rounded-full dark:bg-opacity-80 dark:bg-white"
+                to={`/storiedetail/${storie.id}`}
+              >
+                წაიკითხე მეტი
+              </Link>
+            </div>
           </div>
         ))}
       </div>

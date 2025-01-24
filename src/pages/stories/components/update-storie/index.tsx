@@ -35,7 +35,7 @@ const UpdateStorie = () => {
   const { id } = useParams<{ id: string }>();
   const storyId = id ? parseInt(id, 10) : undefined;
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { data: storieDetail, isLoading } = useQuery({
     queryKey: ["storie-detail", storyId],
@@ -90,13 +90,13 @@ const UpdateStorie = () => {
       };
 
       await updateStorie(storyId, payload);
-      navigate('/' + APP_PATHS.PROFILE);
+      navigate("/" + APP_PATHS.PROFILE);
     } catch (error) {
       console.error("Error updating story:", error);
     }
   };
 
-  if (isLoading) return  <Spinner />
+  if (isLoading) return <Spinner />;
 
   return (
     <Container>

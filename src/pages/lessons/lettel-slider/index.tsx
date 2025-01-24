@@ -22,7 +22,7 @@ const LetterSlider: React.FC = () => {
   });
 
   if (isLoading) {
-    return <Spinner />
+    return <Spinner />;
   }
 
   if (error) {
@@ -31,7 +31,6 @@ const LetterSlider: React.FC = () => {
 
   return (
     <div className="w-full xl:w-1/2 flex items-center justify-center md:px-12 mb-9 xl:mb-0">
-     
       <Carousel className="w-full">
         <CarouselContent>
           {lettersData?.map((letter, id) => (

@@ -33,7 +33,7 @@ const CreateStorie: React.FC = () => {
 
   const { t } = useTranslation();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const form = useForm<StorieTypes>({
     resolver: zodResolver(storieFormSchema),
@@ -60,11 +60,9 @@ const CreateStorie: React.FC = () => {
           });
         })
         .then(() => {
-          navigate("/"+ APP_PATHS.PROFILE ); 
+          navigate("/" + APP_PATHS.PROFILE);
         });
     }
-
-     
   };
 
   return (

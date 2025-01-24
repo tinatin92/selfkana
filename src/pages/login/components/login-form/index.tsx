@@ -94,7 +94,7 @@ export function LoginForm() {
           <div className="flex  mt-6 justify-center gap-4 items-center">
             <div>Are not you registered yet?</div>
             <div className="text-xl font-semibold">
-              <Link to={'/' + APP_PATHS.SIGNUP }>Signup</Link>
+              <Link to={"/" + APP_PATHS.SIGNUP}>Signup</Link>
             </div>
           </div>
         </div>

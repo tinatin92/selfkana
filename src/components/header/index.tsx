@@ -141,7 +141,11 @@ const Header: React.FC = () => {
           </div>
 
           <div className="relative ml-auto">
-            <Button variant='secondary' className="relative " onClick={() => setIsOpen(!isOpen)}>
+            <Button
+              variant="secondary"
+              className="relative "
+              onClick={() => setIsOpen(!isOpen)}
+            >
               lang
             </Button>
             {isOpen && (
