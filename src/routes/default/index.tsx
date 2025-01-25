@@ -54,7 +54,9 @@ export const ROUTES = [
     path={APP_PATHS.PROFILE}
     element={
       <Suspense fallback={<Spinner />}>
-       <AuthGuard ><ProfilePage /></AuthGuard> 
+        <AuthGuard>
+          <ProfilePage />
+        </AuthGuard>
       </Suspense>
     }
   />,

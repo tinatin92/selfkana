@@ -101,6 +101,6 @@ const LoginForm: React.FC = () => {
       </div>
     </Container>
   );
-}
+};
 
 export default LoginForm;
