@@ -24,7 +24,7 @@ type LoginTypes = {
   password: string;
 };
 
-export function LoginForm() {
+const LoginForm: React.FC = () => {
   const navigate = useNavigate();
 
   const form = useForm<LoginTypes>({

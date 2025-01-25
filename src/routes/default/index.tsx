@@ -11,6 +11,7 @@ import { UpdateStoriePage } from "./update-storie";
 import { StorieDetailPage } from "./storie-detail";
 import { StoriesList } from "./storie-list";
 import Spinner from "@/components/ui/spinner";
+import AuthGuard from "@/components/route-guards/auth";
 
 export const ROUTES = [
   <Route
@@ -53,7 +54,7 @@ export const ROUTES = [
     path={APP_PATHS.PROFILE}
     element={
       <Suspense fallback={<Spinner />}>
-        <ProfilePage />
+       <AuthGuard ><ProfilePage /></AuthGuard> 
       </Suspense>
     }
   />,

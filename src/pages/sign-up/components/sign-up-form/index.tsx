@@ -23,7 +23,7 @@ type signUpTypes = {
   password: string;
 };
 
-export function SignUpForm() {
+const SignUpForm: React.FC = () => {
   const form = useForm<signUpTypes>({
     resolver: zodResolver(signUpSFormSchema),
     defaultValues: { email: "", password: "" },

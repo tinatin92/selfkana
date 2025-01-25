@@ -4,7 +4,7 @@ import Canva from "../components/canva";
 import Banner from "@/components/ui/banner";
 import { useTranslation } from "react-i18next";
 
-const LessonsPage = () => {
+const LessonsPage: React.FC = () => {
   const { t } = useTranslation();
   return (
     <Container>

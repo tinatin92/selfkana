@@ -8,7 +8,7 @@ import { HiOutlineTrash } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import Spinner from "@/components/ui/spinner";
 
-const UserProfileStories = () => {
+const UserProfileStories: React.FC = () => {
   const [user] = useAtom(userAtom);
 
   const queryClient = new QueryClient();

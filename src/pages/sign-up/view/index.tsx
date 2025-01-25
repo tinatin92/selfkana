@@ -1,6 +1,6 @@
 import SignUpForm from "../components/sign-up-form";
 
-const SignUpPage = () => {
+const SignUpPage: React.FC = () => {
   return <SignUpForm />;
 };
 

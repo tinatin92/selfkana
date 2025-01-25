@@ -1,6 +1,6 @@
 import CreateStorie from "../../components/create-storie-form";
 
-const CreateStoriesPage = () => {
+const CreateStoriesPage: React.FC = () => {
   return <CreateStorie />;
 };
 

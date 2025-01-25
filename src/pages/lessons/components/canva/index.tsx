@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 
-const Canva = () => {
+const Canva: React.FC = () => {
   const [isDrawing, setIsDrawing] = useState(false);
 
   const [strokeColor, setStrokeColor] = useState("white");

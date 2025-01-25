@@ -31,7 +31,7 @@ type StorieTypes = {
   user_id?: string | null;
 };
 
-const UpdateStorie = () => {
+const UpdateStorie: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const storyId = id ? parseInt(id, 10) : undefined;
 

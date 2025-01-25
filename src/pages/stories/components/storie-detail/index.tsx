@@ -5,7 +5,7 @@ import Container from "@/components/ui/container";
 import { supabase } from "@/supabase";
 import Spinner from "@/components/ui/spinner";
 
-const StorieDetail = () => {
+const StorieDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const storyId = id ? parseInt(id, 10) : undefined;

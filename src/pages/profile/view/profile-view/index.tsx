@@ -1,7 +1,7 @@
 import ProfileForm from "../../components/profile";
 import UserProfileStories from "../../components/user-stories";
 
-const ProfilePage = () => {
+const ProfilePage: React.FC = () => {
   return (
     <>
       <ProfileForm />

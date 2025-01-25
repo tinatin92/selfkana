@@ -1,7 +1,7 @@
 import Banners from "../../components/banners";
 import Hero from "../../components/herosection";
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   return (
     <div>
       <Hero />
