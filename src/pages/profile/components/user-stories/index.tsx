@@ -47,7 +47,7 @@ const UserProfileStories: React.FC = () => {
   }
 
   if (!userStories || userStories.length === 0) {
-    return <p>You haven't added any stories yet.</p>;
+    return <p className="mx-auto mt-12">You haven't added any stories yet.</p>;
   }
 
   return (
